@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello, 千～葉(GeraTear)">
-    <meta name="description" content="大家好！欢迎来到GeraTear的Blog。笔者电子邮箱:&amp;#71;&amp;#x65;&amp;#114;&amp;#97;&amp;#x74;&amp;#101;&amp;#x61;&amp;#114;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#x2e;&amp;#x63">
+    <meta name="keywords" content="Linux系统下的进程, 千～葉(GeraTear)">
+    <meta name="description" content="fork()函数
+如用fork函数，导入Python的OS模块调用fork,创建进程栗子：
+12345import osA = os.fork()print(&amp;#x27;fork返回值：%d&amp;#x27; %A)
+
+Linux和Unix系统创">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello | 千～葉(GeraTear)</title>
+    <title>Linux系统下的进程 | 千～葉(GeraTear)</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -197,13 +201,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello
+                        Linux系统下的进程
                     </div>
                 </div>
             </div>
@@ -293,9 +297,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%8A%80%E6%9C%AF/" target="_blank">
+                                <span class="chip bg-color">技术</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -306,7 +314,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-25
+                    2021-05-16
                 </div>
 
                 
@@ -322,9 +330,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>大家好！欢迎来到GeraTear的Blog。笔者电子邮箱:<a href="mailto:&#71;&#x65;&#114;&#97;&#x74;&#101;&#x61;&#114;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#71;&#x65;&#114;&#97;&#x74;&#101;&#x61;&#114;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> ,欢迎一起交流与成长！</p>
-<h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>——————如果说人生是自我编写的程序<br>——————那么青春就是其中意味深长的代码<br>——————我们敲击着人生的轨迹<br>——————我们尝试着不断自我调试与优化<br>——————无论运行结果如何都将是人生风景</p>
-<p>By:轩</p>
+                <p>fork()函数</p>
+<p>如用fork函数，导入Python的OS模块调用fork,创建进程<br>栗子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">A = os.fork()</span><br><span class="line"></span><br><span class="line">print(&#x27;fork返回值：%d&#x27; %A)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Linux和Unix系统创建进程会父进程产生子进程。</p>
+</li>
+<li><p>Linux系统查看进程命令:PS -ef | head -3</p>
+</li>
+<li><p>PID是子进程       PPID是父进程</p>
+</li>
+<li><p>get pid函数与get ppid函数</p>
+</li>
+<li><p>os.getpid()是获得当前进程Pid</p>
+</li>
+<li><p>os.getppid()是获得当前进程的父进程PPid</p>
+</li>
+</ul>
+<h2 id="fork函数原理"><a href="#fork函数原理" class="headerlink" title="fork函数原理:"></a>fork函数原理:</h2><p>   fork函数是通过复制父进程产生子进程</p>
+<p>注：fork函数在父进程中返回新进程（子进程）的pid<br>    fork函数在子进程中返回特殊值0</p>
+<p>pid大于0是父进程，pid等于0是子进程</p>
+<p>当前进程产生新的进程，进程是在迭代的</p>
+<p>父进程产生子进程之后，那个进程先运行由操作系统调度</p>
+<h2 id="进程的全局变量"><a href="#进程的全局变量" class="headerlink" title="进程的全局变量"></a>进程的全局变量</h2><p>操作系统在进程逻辑上是隔离的，不同进程之间全局变量不能共享的（系统安全性，如支付宝与QQ进程之间通信是不安全的进程与进程之间不能直接通信）</p>
+<p>前台进程与后台进程</p>
+<p>前台进程可以接收键盘输入</p>
+<p>后台进程就是父进程销毁子进程变成后台进程（变后台进程时提示符直接打印出来，子进程接着提示符往后打印出来）</p>
 
             </div>
             <hr/>
@@ -348,7 +379,7 @@
                     </span>
                     <a href="http://example.com" class="b-link-green">千～葉(GeraTear)</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/04/25/hello/" class="b-link-green">Hello</a>
+                    <a href="/2021/05/16/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%87%BD%E6%95%B0/" class="b-link-green">Linux系统下的进程</a>
                 </p>
             </div>
         </div>
@@ -632,20 +663,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/">
+                <a href="/2021/05/16/MongoDB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="漫步行者">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="MySQL数据库">
                         
-                        <span class="card-title">漫步行者</span>
+                        <span class="card-title">MySQL数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">漫步行者我行黑夜里的雨步黑夜里迷失自我是我拥有了黑夜还是黑夜拥有了我我们只是黑夜里的独行者雨点是黑夜里的见证者滴答雨滴划过黑夜点点滴滴划过足迹偶然见证我们的事迹待雨滴消散时的彩虹醒时是泡沫的彩虹梦时光匆匆 泡沫蒸发的岁月时间曼曼 已是无声的</div>
+                    <div class="summary">MongoDB数据库MongoDB是一个基于分布式文件，存储的NOSQL数据库，是面向集合的存储，复制和高可用性。支持服务器之间的数据库复制。
+1启动：sudo service mongod start
+
+</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-25
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-16
                         </span>
                         <span class="publish-author">
                             
@@ -658,8 +692,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/" target="_blank">
-                        <span class="chip bg-color">生活</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/" target="_blank">
+                        <span class="chip bg-color">技术</span>
                     </a>
                     
                 </div>
@@ -673,26 +707,20 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/">
+                <a href="/2021/05/16/kafka/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="了解我">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Kafka">
                         
-                        <span class="card-title">了解我</span>
+                        <span class="card-title">Kafka</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">博客的初心希望记录平时遇到的问题和知识或所思所想！
-
-其实一直以来喜欢瞎折腾;(Ps):其实我弄水晶头、拉网线、配 IP、装系统、给手机贴膜的技术还算可以的，其它都不行。
-
-兴趣
-运动：短跑、溜冰、羽毛球都喜欢
-摄影：任何时候都有美好的一瞬</div>
+                    <div class="summary">KafkaKafka是最初由Linkedin公司开发，是一个分布式、分区的、多副本的、多订阅者，基于zookeeper协调的分布式日志系统（也可以当做MQ系统），常见可以用于web/nginx日志、访问日志，消息服务等等，Linkedin于</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-16
                             </span>
                         <span class="publish-author">
                             
@@ -701,6 +729,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/" target="_blank">
+                        <span class="chip bg-color">技术</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -799,6 +835,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
