@@ -4,12 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="进程之间通信, 千～葉(GeraTear)">
-    <meta name="description" content="进程之间通信进程之间通信可连接公共空间进行通信，相互获取公共信息。
-Queue使用
-可以使用multiprocessing模块的Queue实现多进程之间的数据传递，Queue本身是一个消息队列。
-Queue()函数在内存中申请一段缓冲区
-存">
+    <meta name="keywords" content="Python的闭包, 千～葉(GeraTear)">
+    <meta name="description" content="在函数内部再定义一个函数，并且这个函数用到外边的函数的变量，那么将这个函数以及用到的一些变量称为闭包
+例子1:
+12345678910def test(A):    def test_in(A_in):        print(&amp;#x27">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +15,7 @@ Queue()函数在内存中申请一段缓冲区
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>进程之间通信 | 千～葉(GeraTear)</title>
+    <title>Python的闭包 | 千～葉(GeraTear)</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -201,13 +199,13 @@ Queue()函数在内存中申请一段缓冲区
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        进程之间通信
+                        Python的闭包
                     </div>
                 </div>
             </div>
@@ -314,7 +312,7 @@ Queue()函数在内存中申请一段缓冲区
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-16
+                    2021-05-25
                 </div>
 
                 
@@ -330,19 +328,15 @@ Queue()函数在内存中申请一段缓冲区
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="进程之间通信"><a href="#进程之间通信" class="headerlink" title="进程之间通信"></a>进程之间通信</h2><p>进程之间通信可连接公共空间进行通信，相互获取公共信息。</p>
-<p>Queue使用</p>
-<p>可以使用multiprocessing模块的Queue实现多进程之间的数据传递，Queue本身是一个消息队列。</p>
-<p>Queue()函数在内存中申请一段缓冲区</p>
-<p>存放数据 q.put(msg)</p>
-<p>获取数据 sg = q.get()</p>
-<p>消息队列特点：先进先出</p>
-<ul>
-<li><p>   q.put()列为满时候，可能会阻塞（调用q.qut()任务等待)</p>
-</li>
-<li><p>   q.get()在队列为空时候，可能会阻塞（调用者等待）</p>
-</li>
-</ul>
+                <p>在函数内部再定义一个函数，并且这个函数用到外边的函数的变量，那么将这个函数以及用到的一些变量称为闭包</p>
+<p>例子1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def test(A):</span><br><span class="line">    def test_in(A_in):</span><br><span class="line">        print(&#x27;in test_in函数,A_in is%d&#x27; %A_in)</span><br><span class="line">        return A+A_in</span><br><span class="line"></span><br><span class="line">return A_in     #返回其实就是闭包结果</span><br><span class="line">ret = test(20)</span><br><span class="line">print(ret(100))</span><br><span class="line">print(ret(200))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>例子2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def test A(a,b):</span><br><span class="line">    def test(x):</span><br><span class="line">        return a*x+b</span><br><span class="line">    return test</span><br><span class="line">test1 = test_A(1,1)</span><br><span class="line">test2 = test_A(4,5)</span><br><span class="line">print(test1(5))</span><br><span class="line">print(test2(5))</span><br></pre></td></tr></table></figure>
+<p>函数test与变量a,b构成闭包，创建闭包时通过，test_A的参数a,b 说明两个变量的取值，确定函数最终形成（y =x + 1 和 y =4x + 5）只需要变换参数a,b 就可以获得不同的直线表达函数。</p>
+<p>闭包也具有提高代码可复用性的作用。</p>
+<p>如果没有闭包，需要更多的参数传递，也减少代码可移植性，由于闭包引用外部函数的局部变量，则外部函数的局部变量没有及时释放，消耗内存。<br>函数里嵌套定义函数，并且内层函数使用外层函数的变量或参数，外层函数要返回这个内层函数。<br>内层函数及使用外层函数的变量或参数形成一个闭包。</p>
 
             </div>
             <hr/>
@@ -366,7 +360,7 @@ Queue()函数在内存中申请一段缓冲区
                     </span>
                     <a href="http://example.com" class="b-link-green">千～葉(GeraTear)</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/05/16/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/" class="b-link-green">进程之间通信</a>
+                    <a href="/2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/" class="b-link-green">Python的闭包</a>
                 </p>
             </div>
         </div>
@@ -646,9 +640,10 @@ Queue()函数在内存中申请一段缓冲区
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/">
                     <div class="card-image">
@@ -664,9 +659,9 @@ Queue()函数在内存中申请一段缓冲区
 例子1:
 12345678910def test(A):    def test_in(A_in):        print(&#x27</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -675,6 +670,7 @@ Queue()函数在内存中申请一段缓冲区
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -693,21 +689,21 @@ Queue()函数在内存中申请一段缓冲区
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/16/%E8%BF%9B%E7%A8%8B/">
+                <a href="/2021/05/16/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="进程">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="进程之间通信">
                         
-                        <span class="card-title">进程</span>
+                        <span class="card-title">进程之间通信</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">进程进程就是执行程序，进程是一种任务的执行，多进程是多种任务的执行，目的主要是解决多个请求时减少请求时间与速度
-多进程多进程是主要为了解决多个任务的请求，同时做多个事情。
-
-单核CPU实现多个任务的多进程
-单核CPU实现多任务的进程就是多进</div>
+                    <div class="summary">进程之间通信进程之间通信可连接公共空间进行通信，相互获取公共信息。
+Queue使用
+可以使用multiprocessing模块的Queue实现多进程之间的数据传递，Queue本身是一个消息队列。
+Queue()函数在内存中申请一段缓冲区
+存</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-16
@@ -825,13 +821,6 @@ Queue()函数在内存中申请一段缓冲区
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">

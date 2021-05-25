@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Python的闭包</title>
+      <link href="2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/"/>
+      <url>2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/</url>
+      
+        <content type="html"><![CDATA[<p>在函数内部再定义一个函数，并且这个函数用到外边的函数的变量，那么将这个函数以及用到的一些变量称为闭包</p><p>例子1:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def test(A):</span><br><span class="line">    def test_in(A_in):</span><br><span class="line">        print(&#x27;in test_in函数,A_in is%d&#x27; %A_in)</span><br><span class="line">        return A+A_in</span><br><span class="line"></span><br><span class="line">return A_in     #返回其实就是闭包结果</span><br><span class="line">ret = test(20)</span><br><span class="line">print(ret(100))</span><br><span class="line">print(ret(200))</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>例子2:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def test A(a,b):</span><br><span class="line">    def test(x):</span><br><span class="line">        return a*x+b</span><br><span class="line">    return test</span><br><span class="line">test1 = test_A(1,1)</span><br><span class="line">test2 = test_A(4,5)</span><br><span class="line">print(test1(5))</span><br><span class="line">print(test2(5))</span><br></pre></td></tr></table></figure><p>函数test与变量a,b构成闭包，创建闭包时通过，test_A的参数a,b 说明两个变量的取值，确定函数最终形成（y =x + 1 和 y =4x + 5）只需要变换参数a,b 就可以获得不同的直线表达函数。</p><p>闭包也具有提高代码可复用性的作用。</p><p>如果没有闭包，需要更多的参数传递，也减少代码可移植性，由于闭包引用外部函数的局部变量，则外部函数的局部变量没有及时释放，消耗内存。<br>函数里嵌套定义函数，并且内层函数使用外层函数的变量或参数，外层函数要返回这个内层函数。<br>内层函数及使用外层函数的变量或参数形成一个闭包。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>进程之间通信</title>
       <link href="2021/05/16/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
       <url>2021/05/16/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
