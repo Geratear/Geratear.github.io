@@ -4,6 +4,82 @@
   
     
     <entry>
+      <title>线程</title>
+      <link href="2021/05/25/%E7%BA%BF%E7%A8%8B/"/>
+      <url>2021/05/25/%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python的生成器</title>
+      <link href="2021/05/25/Python%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8/"/>
+      <url>2021/05/25/Python%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p>生成器（yield函数）</p><h1 id="yield介绍"><a href="#yield介绍" class="headerlink" title="yield介绍"></a>yield介绍</h1><p>带有yield的函数在Python中称为生成器（generator）<br>生成斐波那契（Fibonacci）数列是一个非常简单的递归数列，除第一个和第二个数外，任意一个数都可由前两个数相加得到。</p><p>列子1：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def A(max):</span><br><span class="line">    a,b,c = 0,0,1</span><br><span class="line">    while a &lt; max:</span><br><span class="line">        print(C)</span><br><span class="line">        b,c = c,b+c</span><br><span class="line">        a = a +1</span><br><span class="line">a(5)</span><br><span class="line"></span><br><span class="line">结果：1</span><br><span class="line">      1</span><br><span class="line">      2</span><br><span class="line">      3</span><br><span class="line">      5</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>直接在A函数中用print导致函数可复用性较差，因为A函数返回None,其它函数无法获得函数生成的数列。要提高A函数的可复用性，需返回一个列表（list）</p><p>列子2：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def A(max):</span><br><span class="line">    a,b,c = 0,0,1</span><br><span class="line">    L = []</span><br><span class="line">    while a &lt; max:</span><br><span class="line">        L.append(c)</span><br><span class="line">        b,c = c, b+c</span><br><span class="line">        a = a + 1</span><br><span class="line">    return L</span><br><span class="line"></span><br><span class="line">结果： for a in A(5):</span><br><span class="line">        1</span><br><span class="line">        1</span><br><span class="line">        2</span><br><span class="line">        3</span><br><span class="line">        5</span><br></pre></td></tr></table></figure><p>函数在运行中占用的内存随着参数增大而增大，如果要控制内存占用，不要用列表保存中间结果，而是通过iterable对象来迭代</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">        for i in range(1000)： #会导致生成一个1000个元素的列表</span><br><span class="line">            pass                </span><br><span class="line">        yield</span><br><span class="line"></span><br><span class="line">        def A(max)：</span><br><span class="line">            a,b,c = 0,0,1</span><br><span class="line">            while a &lt; max:</span><br><span class="line">                yield ｃ　＃　打印Ｃ</span><br><span class="line">                b,c = c,b + c</span><br><span class="line">                a = a + 1</span><br><span class="line"></span><br><span class="line">结果：for a in A(5):</span><br><span class="line">        print(a)</span><br><span class="line">      1</span><br><span class="line">      1</span><br><span class="line">      2</span><br><span class="line">      3</span><br><span class="line">      5</span><br></pre></td></tr></table></figure><p>yiled作用就是把一个函数变成生成器，带有yield函数不再是普通函数，解释会认为是一个生成器，调用A(5)不会执行A函数，而是返回一个生成器对象。</p><h1 id="生成器的唤醒（next-函数和send-函数）"><a href="#生成器的唤醒（next-函数和send-函数）" class="headerlink" title="生成器的唤醒（next()函数和send()函数）"></a>生成器的唤醒（next()函数和send()函数）</h1><p>例子1：使用send()函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def A():</span><br><span class="line">    i = 0</span><br><span class="line">    while i &lt; 5:</span><br><span class="line">        t = yield i</span><br><span class="line">        print(t)</span><br><span class="line">        i += 1</span><br><span class="line"></span><br><span class="line">    f = A()</span><br><span class="line">    next(f)</span><br><span class="line">    0</span><br><span class="line">    f.send(&#x27;111&#x27;)</span><br><span class="line">111</span><br><span class="line">    1</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    2</span><br><span class="line">    f.send(&#x27;000&#x27;)</span><br><span class="line">000</span><br><span class="line">    3</span><br></pre></td></tr></table></figure><p>使用send（）函数可以在唤醒同时断点处传入一个附加数据执行到yield时，A函数作用暂时保存，返回i的值，t接收send发送的值<br>例子2：使用next函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    f = A()</span><br><span class="line">    next(f)</span><br><span class="line">    0</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">     1</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    2</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    3</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    4</span><br><span class="line">    next(f)</span><br><span class="line">None            #超出范围</span><br></pre></td></tr></table></figure><p>例子3：使用__next__()函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    f = A</span><br><span class="line">    f.__next__()</span><br><span class="line">    0</span><br><span class="line">    f.__next__()</span><br><span class="line">None</span><br><span class="line">    1</span><br><span class="line">    f.__next__()</span><br><span class="line">None </span><br><span class="line">    2</span><br><span class="line">    f.__next__()</span><br><span class="line">None</span><br><span class="line">    3</span><br><span class="line">    f.__next__()</span><br><span class="line">None</span><br><span class="line">    4</span><br><span class="line">    f.__next__() #超出比较，报出异常</span><br><span class="line">None</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python的迭代器</title>
+      <link href="2021/05/25/Python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8/"/>
+      <url>2021/05/25/Python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p>迭代器是访问集合元素的一种方式。迭代器对像从集合的第一个访问元素开始，直到所有的元素被访问结束。</p><p>作用：用于记录当前访问的位置，提供下一个元素。<br>特点：1.访问者不需要关心迭代器内部的结构，仅需要通过next()方法不断去获取下一个内容<br>      2.不能随机访问集合中的某个值，只能从头到尾依次访问<br>      3.访问到一半时不能往回退<br>      4.便于循环比较大的数据集合，节省内存</p><p>例子：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = __iter__([1,2,3,4])</span><br><span class="line">a.__next__()</span><br><span class="line">结果：1</span><br><span class="line">a.__next__()</span><br><span class="line">结果: 2</span><br><span class="line">a.__next__()</span><br><span class="line">结果：3</span><br><span class="line">a.__next__()</span><br><span class="line">结果：4</span><br><span class="line">a.__next__() #出现异常</span><br><span class="line">结果：出现异常</span><br></pre></td></tr></table></figure><p>list、tuple、str等数据类型可以使用for…in 循环进行顺序依次提取元素的遍历，也称为迭代器</p><p>判断是否可迭代：isinstance()<br>__iter__向外提供迭代<br>__next()__和__iter()_<em>函数作用：<br>next()获取数据，前数据不存在时出现异常<br>iter()获取迭代器对象中的迭代对象，返回迭代器<br>使用_next</em>()函数时候就是调用迭代器的对象__next__方法<br>区别：Python3:<strong>next</strong>,Python2:next<br>函数_next()_和_iter()_与next和iter作用相同，有下划线是魔法方法</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python的装饰器</title>
+      <link href="2021/05/25/Python%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
+      <url>2021/05/25/Python%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p>装饰器的作用就是为已经存在的对象添加其它功能。<br>使用装饰器可以在函数执行前和执行后添加相应操作。<br>装饰器是函数，只是函数可以具有特殊含义，装饰器用来装饰函数或类，使用装饰器可以在函数执行前和执行后添加相应操作。</p><p>装饰器常用于插入日志，性能测试，事物处理验证<br>例子1：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def A(test):</span><br><span class="line">    def B():</span><br><span class="line">        return test()</span><br><span class="line">    return B</span><br><span class="line"></span><br><span class="line">@ A</span><br><span class="line">def test1():</span><br><span class="line">    print(&#x27;功能1&#x27;)</span><br><span class="line">@A</span><br><span class="line">def test2():</span><br><span class="line">    print(&#x27;功能2&#x27;)</span><br></pre></td></tr></table></figure><p>1.自动执行A函数并且将下面的函数名test1当作参数传递</p><p>2.将A函数的返回值，重复赋值test1</p><p>装饰器就是@调用封装名</p><p>例子2,无参数的函数：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from time import ctime,sleep</span><br><span class="line">def tiemfun(func)</span><br><span class="line">    def wrappendfunc():</span><br><span class="line">        print(&#x27;%s called at %s&#x27;%(func.__name__,ctime()))</span><br><span class="line">        func()</span><br><span class="line">   return wrappendfunc</span><br><span class="line">@timefunc</span><br><span class="line">def foo():</span><br><span class="line">print(&#x27;打印&#x27;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python的闭包</title>
       <link href="2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/"/>
       <url>2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/</url>
