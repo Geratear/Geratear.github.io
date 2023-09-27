@@ -42,6 +42,53 @@
   </entry>
   
   <entry>
+    <title>金融知识</title>
+    <link href="http://www.bixuan.xyz/2023/09/19/%E9%87%91%E8%9E%8D/"/>
+    <id>http://www.bixuan.xyz/2023/09/19/%E9%87%91%E8%9E%8D/</id>
+    <published>2023-09-19T11:46:39.114Z</published>
+    <updated>2023-09-27T05:42:22.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>金融就是让钱合理的配置，让钱流动起来。</p><p><img src="http://s1l8d6z5c.hd-bkt.clouddn.com/2563824-db1c15be1ab7e5b2.png" alt="金融"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;金融就是让钱合理的配置，让钱流动起来。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s1l8d6z5c.hd-bkt.clouddn.com/2563824-db1c15be1ab7e5b2.png&quot; alt=&quot;金融&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="生活" scheme="http://www.bixuan.xyz/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习基础</title>
+    <link href="http://www.bixuan.xyz/2023/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://www.bixuan.xyz/2023/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2023-09-19T11:46:39.083Z</published>
+    <updated>2023-09-27T06:28:24.997Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h2><p>人工智能之父，艾伦.图灵。图灵测试是1950年进行的一项科研测试。</p><p>马文·李·闵斯基（英语：Marvin Lee Minsky，1927年8月9日－2016年1月24日），科学家，专长于认知科学与人工智能领域，麻省理工学院人工智能实验室的创始人之一，著有几部人工智能和哲学方面的作品。1969年，因为在人工智能领域的贡献，获得图灵奖。</p><p>机器学习框架:</p><ul><li>Tensorflow</li><li>PyToRCH</li><li>theano</li><li>Caffe2</li><li>CHaine</li></ul><p>数据特征处理分析与归一化</p><p>例子：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> silhouette_score</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kmeans</span>():</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 加载数据</span></span><br><span class="line"></span><br><span class="line">    ld = load_digits()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(ld.target[:<span class="number">20</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    km = KMeans(n_clusters=<span class="number">810</span>)</span><br><span class="line"></span><br><span class="line">    km.fit_transform(ld.data)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(km.labels_[:<span class="number">20</span>])</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(silhouette_score(ld.data,km.labels_))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    kmeans()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;人工智能&quot;&gt;&lt;a href=&quot;#人工智能&quot; class=&quot;headerlink&quot; title=&quot;人工智能&quot;&gt;&lt;/a&gt;人工智能&lt;/h2&gt;&lt;p&gt;人工智能之父，艾伦.图灵。图灵测试是1950年进行的一项科研测试。&lt;/p&gt;
+&lt;p&gt;马文·李·闵斯基（英语：Marvin Le</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://www.bixuan.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>写给25岁的自己</title>
     <link href="http://www.bixuan.xyz/2023/09/19/%E5%86%99%E7%BB%9925%E5%B2%81%E7%9A%84%E8%87%AA%E5%B7%B1/"/>
     <id>http://www.bixuan.xyz/2023/09/19/%E5%86%99%E7%BB%9925%E5%B2%81%E7%9A%84%E8%87%AA%E5%B7%B1/</id>
@@ -430,50 +477,6 @@
       
       
     <summary type="html">&lt;p&gt;走过许多的路线&lt;br&gt;见过你的容颜&lt;br&gt;陪你路过的那个景点&lt;br&gt;总有你的笑脸&lt;br&gt;你的几句寒暄&lt;br&gt;总会想好几天&lt;br&gt;每次见你容颜&lt;br&gt;会想你的初现&lt;br&gt;如果有一天再见你的笑颜&lt;br&gt;会如初见&lt;br&gt;冬雪等不到秋叶的原点&lt;br&gt;我会浮现你的面前&lt;br&gt;你的谎言</summary>
-      
-    
-    
-    
-    
-    <category term="生活" scheme="http://www.bixuan.xyz/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅谈Chatgpt</title>
-    <link href="http://www.bixuan.xyz/2023/09/15/%E6%B5%85%E8%B0%88chatgpt/"/>
-    <id>http://www.bixuan.xyz/2023/09/15/%E6%B5%85%E8%B0%88chatgpt/</id>
-    <published>2023-09-15T05:40:36.647Z</published>
-    <updated>2023-04-08T12:05:28.741Z</updated>
-    
-    <content type="html"><![CDATA[<p>ChatGPT确实很强大，ChatGPT上线意味着正真的人工智能时代以来临。未来失业人口将会更多，淘汰的职业也会更多。试用了一下ChatGPT连我这个小破站也能轻松总结。<br>如今是一个AI高速发展的时代，ChatGPT未来将会更强大。未来将会淘汰百分之九十八的人，百分之二是掌握AI能力的人</p><p>未来将会是人类与AI对决的时代，早在2018年李开复老师就提出人工智能取代人类，未来情感方面的事情是机器取代不了的。目前世面上的AI已经很强大了，思维能力可以说超越了很多普通人。未来绝不是搜索引擎来查资料了，目前ChatGPT4就已经超越了搜索引擎。未来将会是机器人时代，随着人工智能的来临，人类追求的永生将会更近一步。</p><p>2023年将不再是互联网+的时代，将是AI+的时代。未来将是探索宇宙的时代，人类着陆火星将会更近一步。AI+的时代将会涌现更多的机器人公司，机器人与人类共存的时代，甚至机器人超越人类的时代即将悄悄来临。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;ChatGPT确实很强大，ChatGPT上线意味着正真的人工智能时代以来临。未来失业人口将会更多，淘汰的职业也会更多。试用了一下ChatGPT连我这个小破站也能轻松总结。&lt;br&gt;如今是一个AI高速发展的时代，ChatGPT未来将会更强大。未来将会淘汰百分之九十八的人，百分之</summary>
-      
-    
-    
-    
-    
-    <category term="生活" scheme="http://www.bixuan.xyz/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清明相思烟</title>
-    <link href="http://www.bixuan.xyz/2023/09/15/%E6%B8%85%E6%98%8E%E7%9B%B8%E6%80%9D%E7%83%9F/"/>
-    <id>http://www.bixuan.xyz/2023/09/15/%E6%B8%85%E6%98%8E%E7%9B%B8%E6%80%9D%E7%83%9F/</id>
-    <published>2023-09-15T05:40:36.647Z</published>
-    <updated>2023-04-05T01:11:52.067Z</updated>
-    
-    <content type="html"><![CDATA[<p>你化作天使<br>飞向有你的天堂<br>愿你微笑一世安好<br>化作人间烟雨<br>流淌这世间的美好<br>你慈祥的面容<br>是我们的纪念<br>清明雨上 是你思念<br>愿你在天际的那边<br>泪水化作相思烟<br>滴滴流淌我心间<br>愿你天际流淌思念<br>愿你的心中有一片<br>落叶归心田<br>天使在心间<br>我们的思念<br>你无声祭奠<br>天边的眷念<br>你美好心念</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;你化作天使&lt;br&gt;飞向有你的天堂&lt;br&gt;愿你微笑一世安好&lt;br&gt;化作人间烟雨&lt;br&gt;流淌这世间的美好&lt;br&gt;你慈祥的面容&lt;br&gt;是我们的纪念&lt;br&gt;清明雨上 是你思念&lt;br&gt;愿你在天际的那边&lt;br&gt;泪水化作相思烟&lt;br&gt;滴滴流淌我心间&lt;br&gt;愿你天际流淌思念&lt;br&gt;愿你的心</summary>
       
     
     
