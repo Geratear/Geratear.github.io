@@ -6,7 +6,7 @@
   <link href="http://www.bixuan.xyz/atom.xml" rel="self"/>
   
   <link href="http://www.bixuan.xyz/"/>
-  <updated>2023-09-22T05:32:58.790Z</updated>
+  <updated>2023-10-04T10:55:37.309Z</updated>
   <id>http://www.bixuan.xyz/</id>
   
   <author>
@@ -17,27 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>话务女兵</title>
-    <link href="http://www.bixuan.xyz/2023/09/22/%E8%AF%9D%E5%8A%A1%E5%A5%B3%E5%85%B5/"/>
-    <id>http://www.bixuan.xyz/2023/09/22/%E8%AF%9D%E5%8A%A1%E5%A5%B3%E5%85%B5/</id>
-    <published>2023-09-22T05:16:18.309Z</published>
-    <updated>2023-09-22T05:32:58.790Z</updated>
+    <title>树莓派（）</title>
+    <link href="http://www.bixuan.xyz/2023/10/04/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    <id>http://www.bixuan.xyz/2023/10/04/%E6%A0%91%E8%8E%93%E6%B4%BE/</id>
+    <published>2023-10-04T10:48:57.333Z</published>
+    <updated>2023-10-04T10:55:37.309Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="话务女兵"><a href="#话务女兵" class="headerlink" title="话务女兵"></a>话务女兵</h3><p>作词：武威<br>作曲：于连博<br>演唱：王婷、吴冕、卢飞飞</p><p>键上表演指尖舞蹈<br>电波传递隔空微笑<br>三尺机合就是战位<br>银线传递忠诚可靠</p><p>声音百变全部记牢<br>号码万千最强大脑<br>铃响开始倒数三秒<br>战斗在与时间赛跑</p><p>声声亲切 声声精确<br>温柔与刚强 没有绝对边界<br>时时在线 时时畅通<br>看神剑腾空</p><p>话务女兵 美丽风景<br>不负韶华 一身戎装听号令<br>话务女兵 向战而行</p><p>声声亲切 声声精确<br>温柔与刚强 没有绝对边界<br>时时在线 时时畅通<br>看神剑腾空</p><p>话务女兵 美丽风景<br>不违青春 巾帼木兰保打赢<br>话务女兵 向战而行</p>]]></content>
+    <content type="html"><![CDATA[<p>###树莓派简介<br>树莓派，（英语：Raspberry Pi，简写为RPi，别名为RasPi / RPI）<br>是为学习计算机编程教育而设计，只有信用卡大小的微型电脑，其系统基于Linux。随着Windows 10 IoT的发布，用户可以用上运行Windows的树莓派。树莓派自问世以来，受众多计算机发烧友和创客的追捧，曾经一“派”难求。别看其外表“娇小”，内“芯”却很强大，视频、音频等功能通通皆有，可谓是“麻雀虽小，五脏俱全”。</p><p>###树莓派由来<br>树莓派由注册于英国的“Raspberry Pi 慈善基金会”开发，埃本·阿普顿（Eben Upton）为项目带头人。2012年3月，英国剑桥大学的埃本·阿普顿正式发售世界上最小的台式机，又称卡片式电脑，外形只有信用卡大小，却具有电脑的所有基本功能，这就是Raspberry Pi电脑板，中文译名”树莓派”。这一基金会以提升学校计算机科学及相关学科的教育，让计算机变得有趣为宗旨。基金会期望这 一款电脑无论是在发展中国家还是在发达国家，会有更多的其它应用不断被开发出来，并应用到更多领域。在2006年树莓派早期概念是基于Atmel的 ATmega644单片机，首批上市的10000“台”树莓派的“板子”，由中国台湾和大陆厂家制造。它是一款基于ARM的微型电脑主板，以SD/MicroSD卡为内存硬盘，卡片主板周围有1/2/4个USB接口和一个10/100 以太网接口（A型没有网口），可连接键盘、鼠标和网线，同时拥有视频模拟信号的电视输出接口和HDMI高清视频输出接口，以上部件全部整合在一张仅比信用卡稍大的主板上，具备所有PC的基本功能只需接通电视机和键盘，就能执行如电子表格、文字处理、玩游戏、播放高清视频等诸多功能。 Raspberry Pi B款只提供电脑板，无内存、电源、键盘、机箱或连线。也有开发者尝试出在树莓派上安装Windows 10 ARM版和Windows 11 ARM版。</p><p>###树莓派功能<br>树莓派就像其他任何一台运行Linux系统的台式计算机或者便携式计算机那样，利用Raspberry Pi 可以做很多事情。当然，也难免有一点点不同。普通的计算机主板都是依靠硬盘来存储数据，但是Raspberry Pi 来说使用SD 卡作为“硬盘”，你也可以外接USB 硬盘。利用Raspberry Pi 可以编辑Office 文档、浏览网页、玩游戏—如《雷神之锤》（Quake ）。Raspberry Pi 的低价意味着其用途更加广泛，将其打造成极佳的多媒体中心也是一个不错的选择。利用Raspberry Pi 可以播放视频，甚至可以通过电视机的USB 接口供电。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;话务女兵&quot;&gt;&lt;a href=&quot;#话务女兵&quot; class=&quot;headerlink&quot; title=&quot;话务女兵&quot;&gt;&lt;/a&gt;话务女兵&lt;/h3&gt;&lt;p&gt;作词：武威&lt;br&gt;作曲：于连博&lt;br&gt;演唱：王婷、吴冕、卢飞飞&lt;/p&gt;
-&lt;p&gt;键上表演指尖舞蹈&lt;br&gt;电波传递隔空微笑&lt;br</summary>
+    <summary type="html">&lt;p&gt;###树莓派简介&lt;br&gt;树莓派，（英语：Raspberry Pi，简写为RPi，别名为RasPi / RPI）&lt;br&gt;是为学习计算机编程教育而设计，只有信用卡大小的微型电脑，其系统基于Linux。随着Windows 10 IoT的发布，用户可以用上运行Windows的树莓派</summary>
       
     
     
     
-    <category term="其它" scheme="http://www.bixuan.xyz/categories/%E5%85%B6%E5%AE%83/"/>
     
-    
-    <category term="其它" scheme="http://www.bixuan.xyz/tags/%E5%85%B6%E5%AE%83/"/>
+    <category term="生活" scheme="http://www.bixuan.xyz/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
